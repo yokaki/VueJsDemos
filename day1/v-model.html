@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script src='vue.js'></script>
+</head>
+
+
+<body>
+<!-- 可以用v-model指令在表单元素上创建双向数据绑定。
+它会根据空间类型自动选取正确的方式来更新元素。 -->
+<div id="app1">
+  <input type="text" v-model="message" placeholder="edit me">
+  <p>Message is:{{message}}</p>
+</div>
+<div id="app2">
+  <span>Multiline message is :</span>
+  <!-- 在文本区域插值( <textarea></textarea> ) 并不会生效，应用 v-model 来代替 -->
+  <p style="white-space:pre">{{message}}</p>
+  <br>
+  <textarea v-model="message" placeholder="add multiple lines"></textarea>
+</div>
+<div id="app3">
+  <input type="checkbox" id="checkbox" v-model="checked">
+  <label for="checkbox">{{checked}}</label>
+</div>
+<div id="app4">
+  <input type="checkbox" id="jack" v-model="checkedNa" value="jack">
+  <label for="jack">jack</label>
+  <input type="checkbox" id="john" v-model="checkedNa" value="john">
+  <label for="john">john</label>
+  <input type="checkbox" id="mike" v-model="checkedNa" value="mike">
+  <label for="mike">mike</label>
+  <br>
+  <span>Check names:{{checkedNa}}</span>
+</div>
+<div id="app5">
+  <input type="radio" id="one" value="One" v-model="picked">
+  <label for="one">One</label>
+  <br>
+  <input type="radio" id="two" value="Two" v-model="picked">
+  <label for="two">Two</label>
+  <br>
+  <span>Picked : {{picked}}</span>
+</div>
+<script>
+  var app5 = new Vue({
+    el: "#app5",
+    data: {
+      picked: ""//??????
+    }
+
+  });
+  var app4 = new Vue({
+    el: "#app4",
+    data: {
+      checkedNa: []
+    }
+  });
+  var app3 = new Vue({
+    el: "#app3",
+    data: {
+      checked: true
+    }
+  });
+  var app2 = new Vue({
+    el: '#app2',
+    data: {
+      message: ""
+    }
+  });
+  var app1 = new Vue({
+    el: '#app1',
+    data: {
+      message: "" //此处必须声明message
+    }
+  });
+</script>
+</body>
+
+</html>

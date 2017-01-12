@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src='vue.js'></script>
+</head>
+
+<body>
+    <ul id="app1">
+        <li v-for='(item,index) of items'>
+            {{msg}} - {{item.message}} - {{index}}
+        </li>
+    </ul>
+    <ul id="app2">
+        <li v-for='value in object'>
+            {{value}}</li>
+    </ul>
+    <div id="app3">
+        <span v-for="n in 10">{{ n }}</span>
+    </div>
+    <script>
+    var app3=new Vue({
+    	el:'#app3',
+    	
+    });
+    var object1 = {
+        name: "杨嘉熙",
+        age: 17
+
+    };
+    var app2 = new Vue({
+        el: '#app2',
+        data: {
+            object: object1
+        }
+    });
+
+    var app1 = new Vue({
+        el: '#app1',
+        data: {
+            msg: 'helle',
+            items: [{
+                message: 'Foo'
+            }, {
+                message: 'Bar'
+            }]
+        }
+    });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script src='vue.js'></script>
+  <script>
+    /*1.注册组件Vue.component('标签名'，模板)*/
+    Vue.component('my-component', {
+      template: '<div>hello world!</div>'
+    });
+  </script>
+</head>
+
+<body>
+<!-- 调用先前定义的组件 -->
+<div id='app1'>
+  <my-component>nihao</my-component>
+</div>
+</body>
+<script type="text/javascript">
+  /*创建vue实例  */
+  new Vue({
+    el: '#app1'
+  });
+</script>
+
+</html>
