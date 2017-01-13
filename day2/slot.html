@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <script src="vue.js"></script>
+</head>
+<body>
+<div id="app1">
+  <h1>这是父组件的标题</h1>
+  <child>
+    <p>这是一些初始内容</p>
+    <p>这是更多的初始内容</p>
+  </child>
+</div>
+<script>
+  /*<slot></slot>标签内的内容只有在父组件没有内容分发时才会被渲染  */
+  Vue.component('child',{
+    template:'<div><h2>我是子组件的标题</h2><slot><h1>只有在没有要分发的内容时才会显示。</h1></slot></div>'
+  });
+  new Vue({
+    el:'#app1'
+  });
+</script>
+</body>
+</html>  
