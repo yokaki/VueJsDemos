@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    .fade-enter-active, .fade-leave-active {
+      transition: opacity .5s
+    }
+
+    .fade-enter, .fade-leave-active {
+      opacity: 0
+    }
+  </style>
+  <script src="vue.js"></script>
+</head>
+<body>
+<div id="demo">
+  <button @click="show=!show">Toggle</button>
+  <transition name="fade">
+    <p v-if="show">Hello World</p>
+  </transition>
+</div>
+<script>
+  let demo = new Vue({
+    el: '#demo',
+    data: {
+      show: true
+    }
+  });
+</script>
+</body>
+</html>  
