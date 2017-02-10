@@ -1,39 +1,70 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <title>TODO List</title>
-  <script src="vue.js"></script>
-</head>
-<body>
-<div id="app">
-  <input v-model="newTodo" @keyup.enter="addTodo">
-  <ul>
-    <li v-for="todo in todoList">
-      <span>{{todo.text}}</span>
-      <button @click="removeTodo($index)">X</button>
-    </li>
-  </ul>
-</div>
-<script>
-  new Vue({
-    el: "#app",
-    data: {
-      newTodo: "",
-      todoList: []
-    },
-    methods: {
-      addTodo : function(){
-        let text = this.newTodo.trim();
-        if(text){
-          this.todoList.push({text : text});
-          this.newTodo = "";
-        }
-      },
-      removeTodo : function(index){
-        this.todoList.splice(index, 1);
-      }
+    <title>TODO List</title>
+    <style>
+    a {
+        text-decoration: none;
+        color: #666;
+        float: right;
     }
-  });
-</script>
+    
+    input {
+        height: 40px;
+        width: 500px;
+        font: 24px/40px "微软雅黑"
+    }
+    
+    li {
+        height: 40px;
+        width: 400px;
+        font: 16px/40px "微软雅黑"
+    }
+    
+    .theTime {
+        padding-left: 20px;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <h1>My todo list</h1>
+        <input v-model="newTodo" @keyup.enter="addTodo">
+        <ul>
+            <li v-for="(todo,index) in todoList">
+                <span>{{todo.text}}<span class="theTime">{{theTime}}</span></span>
+                <a href="javascript:" @click="removeTodo(index)">Delete</a>
+            </li>
+        </ul>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+    new Vue({
+        el: "#app",
+        data: {
+            newTodo: "",
+            todoList: [],
+            theTime: new Date().toDateString()
+        },
+        methods: {
+            addTodo: function() {
+                let text = this.newTodo.trim();
+                if (text) {
+                    this.todoList.push({
+                        text: text
+                    });
+                    this.newTodo = "";
+                }
+            },
+            removeTodo: function(index) {
+                console.log(index);
+                this.todoList.splice(index, 1); //splice() 方法可删除从index 处开始的零个或多个元素
+            }
+        }
+    });
+    </script>
 </body>
+
 </html>
