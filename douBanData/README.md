@@ -14,3 +14,5 @@ npm run dev
 npm run build
 ```
 
+在线预览地址：[demo](https://yokaki.github.io/demos/vue/rating/module/Element.html)
+
