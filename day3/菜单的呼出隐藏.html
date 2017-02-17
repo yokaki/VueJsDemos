@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    #app1 {
+      overflow-x: hidden;
+    }
+
+    .main {
+      height: 800px;
+      width: 400px;
+      background-color: antiquewhite;
+      position: relative;
+      display: flex;
+      left: 0;
+      transition: all 1s ease
+    }
+
+    button {
+      position: absolute;
+      padding: 80px 20px;
+      z-index: 999;
+      border: 0;
+      background-color: aqua;
+      color: #fff;
+      top: 30%;
+    }
+
+    .box1 {
+      height: 100%;
+      width: 30%;
+      background-color: #000;
+      position: absolute;
+      left: -30%;
+    }
+
+    .box2 {
+      height: 100%;
+      width: 65%;
+      background-color: #ff2a0c;
+    }
+
+    .active {
+      left: 30%;
+    }
+  </style>
+  <script src='vue.js'></script>
+</head>
+
+<body>
+<div id='app1'>
+  <div class="main" :class="{active: isActive}">
+    <button @touchend="btnTouch" v-text="btn"></button>
+    <div class="box1"></div>
+    <div class="box2" @touchstart="touchGo" @touchend="touchStop" @click="hideIt"></div>
+  </div>
+</div>
+</body>
+<script>
+  new Vue({
+    el: '#app1',
+    data: {
+      btn: '>',
+      isActive: false,
+      moveLength: '',
+      startX: '',
+      endX: ''
+    },
+    methods: {
+      btnTouch: function (e) {
+        this.isActive = !this.isActive;
+        if (this.btn == '>') {
+          this.btn = '<';
+        } else {
+          this.btn = '>';
+        }
+      },
+      touchGo: function (e) {
+        this.startX = e.changedTouches[0].clientX;
+      },
+      touchStop: function (e) {
+        this.endX = e.changedTouches[0].clientX;
+        this.moveLength = this.endX - this.startX;
+        if (this.moveLength > 30) {
+          this.isActive = true;
+          this.btn = '<';
+        }
+        if (this.moveLength < -30) {
+          this.isActive = false;
+          this.btn = '>';
+        }
+      },
+      hideIt: function (e) {
+        this.isActive = false;
+        this.btn = '>';
+      }
+    }
+  });
+</script>
+
+</html>
