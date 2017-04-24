@@ -1,0 +1,48 @@
+header {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.run_data, .user_name_and_avatar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+header img.avatar {
+  width: 3.3rem;
+  height: 3.3rem;
+  border-radius: 50%;
+}
+
+.info {
+  padding: .3rem;
+}
+
+.info p {
+  font-size: 1.1rem;
+  color: #FFF;
+  background-color: #ff4949;
+  padding: .4rem .7rem .4rem .7rem;
+  border-radius: .7rem;
+  /*box-shadow: 2px 2px 1px #ccc;*/
+}
+
+.info > li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: .3rem;
+}
+
+.user_name {
+  padding: .5rem;
+}
+
+.rank_logo {
+  height: 6rem;
+  width: 4.7rem;
+
+}

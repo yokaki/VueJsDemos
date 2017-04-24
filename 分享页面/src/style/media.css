@@ -1,0 +1,76 @@
+html, body {
+  width: 100%;
+  height: 100%;
+  font-family: "微软雅黑";
+  font-size: 12px;
+}
+
+/*@media only screen and (max-width: 1980px) {*/
+  /*body, html {*/
+    /*font-size: 20px !important;*/
+  /*}*/
+/*}*/
+
+/*@media only screen and (max-width: 1280px) {*/
+  /*body, html {*/
+    /*font-size: 18px !important;*/
+  /*}*/
+/*}*/
+
+/*@media only screen and (max-width: 640px) {*/
+  /*body, html {*/
+    /*font-size: 16px !important;*/
+  /*}*/
+/*}*/
+
+/*@media only screen and (max-width: 440px) {*/
+  /*!*i6+*!*/
+  /*body, html {*/
+    /*font-size: 14px !important;*/
+  /*}*/
+
+  /*img {*/
+    /*width: 100%;*/
+  /*}*/
+
+  /*.location {*/
+    /*height: 80%;*/
+  /*}*/
+/*}*/
+
+/*@media only screen and (max-width: 420px) {*/
+  /*!*NE5+*!*/
+  /*body, html {*/
+    /*font-size: 14px !important;*/
+  /*}*/
+
+  /*img {*/
+    /*width: 100%;*/
+  /*}*/
+
+  /*.location {*/
+    /*height: 90%;*/
+  /*}*/
+/*}*/
+
+/*@media only screen and (max-width: 376px) {*/
+  /*!*i6*!*/
+  /*body, html {*/
+    /*font-size: 14px !important;*/
+  /*}*/
+
+  /*.location {*/
+    /*height: 80%;*/
+  /*}*/
+/*}*/
+
+@media only screen and (max-width: 321px) {
+  /*i4*/
+  body, html {
+    font-size: 12px !important;
+  }
+
+  .location {
+    height: 37rem;
+  }
+}
