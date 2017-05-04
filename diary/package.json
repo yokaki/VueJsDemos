@@ -11,10 +11,14 @@
   },
   "dependencies": {
     "axios": "^0.16.1",
+    "install": "^0.9.6",
     "less": "^2.7.2",
     "less-loader": "^4.0.3",
+    "marked": "^0.3.6",
+    "sweet-modal-vue": "^1.1.0",
     "vue": "^2.2.6",
     "vue-router": "^2.3.1",
+    "vue-simplemde": "^0.3.8",
     "vuex": "^2.3.1"
   },
   "devDependencies": {

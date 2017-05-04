@@ -17,6 +17,10 @@
         }
       }
     },
+    mounted(){
+      let username = window.localStorage.getItem('username')
+      this.$store.commit('get_username',username)
+    },
     components: {
       'app_header': header
     }

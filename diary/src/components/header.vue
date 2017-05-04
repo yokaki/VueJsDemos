@@ -1,7 +1,7 @@
 <template>
   <ul class="header">
     <li v-for="i in menu">
-      <router-link :to="i.url">
+      <router-link :to="i.url" class="block">
         {{i.name}}
       </router-link>
 
